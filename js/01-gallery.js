@@ -2,7 +2,6 @@ import { galleryItems } from './galleryItems.js';
 
 const gallery = document.querySelector('.gallery');
 
-
 function createGallery() {
   galleryItems.forEach(item => {
     const galleryItem = document.createElement('div');
