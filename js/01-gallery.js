@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-import * as basicLightbox from './basiclightbox';
+import * as basicLightbox from 'basiclightbox';
 
 document.addEventListener('DOMContentLoaded', function() {
   const gallery = document.querySelector('.gallery');
@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryItem.appendChild(link);
     gallery.appendChild(galleryItem);
 
-    
     image.addEventListener('click', function(event) {
       event.preventDefault(); 
 
