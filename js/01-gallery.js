@@ -22,9 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryItem.appendChild(link);
     gallery.appendChild(galleryItem);
 
-    image.addEventListener('click', function() {
-      const instance = BasicLightbox.create(`<img src="${item.original}" alt="${item.description}">`);
-      instance.show();
+    image.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const instance = BasicLightbox.create(`<img src="${item.original}" alt="${item.description}">`);
+        instance.show();
     });
   });
 
