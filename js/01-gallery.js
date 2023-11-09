@@ -9,6 +9,7 @@ galleryItems.forEach(item => {
   const link = document.createElement('a');
   link.classList.add('gallery__link');
   link.href = item.original;
+  link.setAttribute('target', '_blank');
 
   const image = document.createElement('img');
   image.classList.add('gallery__image');
