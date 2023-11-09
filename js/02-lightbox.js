@@ -1,10 +1,8 @@
 import { galleryItems } from './gallery-items.js';
 import SimpleLightbox from 'simplelightbox';
 
-
 document.addEventListener('DOMContentLoaded', function () {
   const gallery = document.querySelector('.gallery');
-  const lightbox = new SimpleLightbox('.gallery a', { /* Dodaj opcje tutaj */ });
 
   galleryItems.forEach(item => {
     const galleryItem = document.createElement('li');
@@ -24,8 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
     gallery.appendChild(galleryItem);
   });
 
+  const lightbox = new SimpleLightbox('.gallery a', {
+    /* Dodaj opcje tutaj */
+  });
+
   lightbox.on('show.simplelightbox', function (e) {
-    // Dodaj podpisy do obrazków po otwarciu
     const description = document.createElement('p');
     description.classList.add('description');
     description.textContent = e.caption;
