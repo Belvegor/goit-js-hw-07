@@ -1,8 +1,22 @@
 import { galleryItems } from './gallery-items.js';
-import * as basicLightbox from 'basiclightbox';
+import * as basicLightbox from './basiclightbox';
 
 document.addEventListener('DOMContentLoaded', function() {
   const gallery = document.querySelector('.gallery');
+  let currentInstance = null;
+
+  function openLightbox(item) {
+    const instance = basicLightbox.create(`
+      <img src="${item.original}" alt="${item.description}" width="800" height="600">
+    `);
+
+    instance.show();
+    return instance;
+  }
+
+  function closeLightbox(instance) {
+    instance.close();
+  }
 
   galleryItems.forEach(item => {
     const galleryItem = document.createElement('div');
@@ -23,15 +37,19 @@ document.addEventListener('DOMContentLoaded', function() {
     gallery.appendChild(galleryItem);
 
     image.addEventListener('click', function(event) {
-      event.preventDefault(); 
-
-      const instance = basicLightbox.create(`
-        <img src="${item.original}" alt="${item.description}" width="800" height="600">
-      `);
-
-      instance.show();
+      event.preventDefault();
+      currentInstance = openLightbox(item);
+      document.addEventListener('keydown', handleKeyPress);
     });
   });
+
+  function handleKeyPress(event) {
+    if (event.key === 'Escape' && currentInstance !== null) {
+      closeLightbox(currentInstance);
+      document.removeEventListener('keydown', handleKeyPress);
+      currentInstance = null;
+    }
+  }
 
   console.log(galleryItems);
 });
