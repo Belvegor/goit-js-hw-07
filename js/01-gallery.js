@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryItem.appendChild(link);
     gallery.appendChild(galleryItem);
 
-    // Po kliknięciu na obraz z galerii
+    
     image.addEventListener('click', function(event) {
-      event.preventDefault(); // Zapobieganie domyślnej akcji linku
+      event.preventDefault(); 
 
       const instance = basicLightbox.create(`
         <img src="${item.original}" alt="${item.description}" width="800" height="600">
