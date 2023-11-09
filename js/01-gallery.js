@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const link = document.createElement('a');
     link.classList.add('gallery__link');
-    link.href = item.original;
-    link.setAttribute('target', '_blank');
+    link.href = '#';
+    
 
     const image = document.createElement('img');
     image.classList.add('gallery__image');
