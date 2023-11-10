@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',         // Wykorzystaj atrybut alt jako podpis
-    captionDelay: 250,            // Opóźnienie przed pojawieniem się podpisu
+    captionDelay: 250,            // Opóźnienie przed pojawieniem si podpisu
     captionPosition: 'bottom',    // Pozycja podpisu
   });
 
