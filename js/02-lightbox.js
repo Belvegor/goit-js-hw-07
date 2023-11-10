@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-import SimpleLightbox from './js/simple-lightbox.min.js';
+import SimpleLightbox from 'https://belvegor.github.io/goit-js-hw-07/js/simple-lightbox.min.js';
 
 document.addEventListener('DOMContentLoaded', function () {
   const gallery = document.querySelector('.gallery');
