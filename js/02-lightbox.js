@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
   lightbox.on('show.simplelightbox', function (e) {
     const description = document.createElement('p');
     description.classList.add('description');
-    description.textContent = e.caption;  // domyśln podpis
-    e.overlay.appendChild(description);
+    description.textContent = e.caption;
+    document.body.appendChild(description);
 
     setTimeout(function () {
       description.style.opacity = 1;
