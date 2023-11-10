@@ -1,4 +1,4 @@
-import SimpleLightbox from 'simplelightbox';
+import { galleryItems } from './gallery-items.js';
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -29,15 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   lightbox.on('show.simplelightbox', function (e) {
-    if (e && e.overlay) {
-      const description = document.createElement('p');
-      description.classList.add('description');
-      description.textContent = e.caption;  // Użyj  domyślnegi podpisu
-      e.overlay.appendChild(description);
+    const description = document.createElement('p');
+    description.classList.add('description');
+    description.textContent = e.caption;  // domyśln podpis
+    e.overlay.appendChild(description);
 
-      setTimeout(function () {
-        description.style.opacity = 1;
-      }, 250);
-    }
+    setTimeout(function () {
+      description.style.opacity = 1;
+    }, 250);
   });
 });
+
+console.log(galleryItems);
