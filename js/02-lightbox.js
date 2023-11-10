@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from "./simplelightbox";
 
 document.addEventListener('DOMContentLoaded', function () {
   const gallery = document.querySelector('.gallery');
