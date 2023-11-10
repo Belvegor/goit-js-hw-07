@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   lightbox.on('show.simplelightbox', function (e) {
     const description = document.createElement('p');
     description.classList.add('description');
-    description.textContent = e.caption;
+    description.textContent = e.currentTarget.querySelector('img').alt;
     e.overlay.appendChild(description);
 
     setTimeout(function () {
