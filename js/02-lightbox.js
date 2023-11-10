@@ -1,5 +1,5 @@
-import { galleryItems } from './gallery-items.js';
-
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 document.addEventListener('DOMContentLoaded', function () {
   const gallery = document.querySelector('.gallery');
@@ -23,22 +23,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-    captionPosition: 'bottom',
-    /* Dodaj opcje tutaj */
+    captionsData: 'alt',         // Wykorzystaj atrybut alt jako podpis
+    captionDelay: 250,            // Opóźnienie przed pojawieniem się podpisu
+    captionPosition: 'bottom',    // Pozycja podpisu
   });
 
   lightbox.on('show.simplelightbox', function (e) {
-    const description = document.createElement('p');
-    description.classList.add('description');
-    description.textContent = e.currentTarget.querySelector('img').alt;
-    e.overlay.appendChild(description);
+    if (e && e.overlay) {
+      const description = document.createElement('p');
+      description.classList.add('description');
+      description.textContent = e.caption;  // Użyj  domyślnegi podpisu
+      e.overlay.appendChild(description);
 
-    setTimeout(function () {
-      description.style.opacity = 1;
-    }, 250);
+      setTimeout(function () {
+        description.style.opacity = 1;
+      }, 250);
+    }
   });
 });
-
-console.log(galleryItems);
