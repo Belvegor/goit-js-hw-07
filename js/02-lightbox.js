@@ -28,16 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     captionPosition: 'bottom',    // Pozycja podpisu
   });
 
-  lightbox.on('show.simplelightbox', function (e) {
-    const description = document.createElement('p');
-    description.classList.add('description');
-    description.textContent = e.caption;
-    document.body.appendChild(description);
-
-    setTimeout(function () {
-      description.style.opacity = 1;
-    }, 250);
-  });
+ 
 });
 
 console.log(galleryItems);
